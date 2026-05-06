@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="todo-list">
+                <header>
+                    <h1>To-do List</h1>
+                    <span class="count-task" id="active-task-count">0 task</span>
+                    <div class="date-txt" id="date-txt"></div>
+                </header>
+
+                <form>
+                    <div class="input-row">
+                        <div class="input">
+                            <input type="text" id="input-task" placeholder="Add To-do Task..." autocomplete="off">
+                        </div>
+                        <div class="add-btn">
+                            <button type="submit" class="task-btn" id="task-btn" title="Add task">ADD</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="deadline-label">
+                    <span class="field-label">DEADLINE</span>
+                </div>
+
+                <div class="filters">
+                    <button type="button" class="filter-btn active" data-filter="all">ALL</button>
+                    <button type="button" class="filter-btn active" data-filter="active">ACTIVE</button>
+                    <button type="button" class="filter-btn active" data-filter="overdue">OVERDUE</button>
+                    <button type="button" class="filter-btn active" data-filter="done">DONE</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
