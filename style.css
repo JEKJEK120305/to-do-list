@@ -9,6 +9,9 @@
     --text-color: #f0eae1;
     --background: linear-gradient(90deg, red, green);
     --task-bg: rgb(85, 180, 48);
+    --add-color: rgb(235, 195, 18);
+    --add-bg: rgba(1, 37, 31, 0.87);
+    --form-bg: rgb(147, 35, 175);
 }
 
 body {
@@ -18,6 +21,16 @@ body {
     background: var(--background);
     min-height: 100vh;
     padding: 56px 20px 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid black;
+    background: var(--form-bg);
+    padding: 18px;
+    margin-bottom: 32px;
 }
 
 header {
@@ -51,6 +64,15 @@ body::before {
     border: none;
     border-radius: 15px;
     letter-spacing: 0.7px;
+}
+
+.task-btn {
+    padding: 3px 13px;
+    border: none;
+    border-radius: 7px;
+    color: var(--add-color);
+    transition: background 0.15s, transform 0.1s;
+    background: var(--add-bg);
 }
 
 img {
