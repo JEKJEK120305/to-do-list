@@ -8,14 +8,49 @@
 :root {
     --text-color: #f0eae1;
     --background: linear-gradient(90deg, red, green);
+    --task-bg: rgb(85, 180, 48);
 }
 
 body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     background: var(--background);
+    min-height: 100vh;
+    padding: 56px 20px 100px;
+}
+
+header {
+    margin-bottom: 44px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .container {
+    position: relative;
+    width: 100%;
     margin: 25px;
+    z-index: 1;
+}
+
+.count-task {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 8px;
+    background: var(--task-bg);
+    border: none;
+    border-radius: 15px;
+    letter-spacing: 0.7px;
 }
 
 img {
