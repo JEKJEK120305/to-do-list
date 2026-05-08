@@ -138,6 +138,10 @@ input[type="text"]:focus, input[type="date"]:focus {
     background: var(--add-bg);
 }
 
+.date-txt {
+    margin-top: 10px;
+}
+
 .field-label {
     font-size: 10px;
     color: var(--text-color);
