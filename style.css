@@ -201,6 +201,10 @@ input[type="text"]:focus, input[type="date"]:focus {
     outline: none;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .empty-task {
     text-align: center;
     padding: 50px 0;
