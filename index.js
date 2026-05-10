@@ -96,15 +96,17 @@ window.addEventListener("load", ()=> {
             li.dataset.id = task.id;
 
             li.innerHTML = `
+            <div class="check-flex">
                 <input type="checkbox" class="task-check" ${task.done ? 'checked' : ''}>
                 <div class="task-body">
                     <span class="task-text">${esc(task.text)}</span>
-                    ${task.deadline ? `<span class="task-dl">${dlLabel(task.deadline)}</span>` : ''}
+                    ⋅ ${task.deadline ? `<span class="task-dl">${dlLabel(task.deadline)}</span>` : ''}
                 </div>
                 <div class="task-actions">
                     <button class="icon-btn edit" title="Edit">${iconEdit}</button>
                     <button class="icon-btn delete" title="Delete">${iconDelete}</button>
                 </div>
+            </div>
             `;
 
             li.querySelector('.task-check').addEventListener('change', e => { task.done = e.target.checked;
@@ -154,7 +156,17 @@ window.addEventListener("load", ()=> {
 
     function addTask() {
         const val = taskInput.value.trim();
-        if (!val) { taskInput.focus(); return; }
+        if (!val) {
+            taskInput.classList.add('input-error');
+            taskInput.focus(); 
+            return; 
+        }
+        taskInput.classList.remove('input-error');
+
+        taskInput.addEventListener('input', () => {
+            taskInput.classList.remove('input-error');
+        });
+
         tasks.unshift({
             id: uid(),
             text: val,
@@ -164,7 +176,8 @@ window.addEventListener("load", ()=> {
         });
         taskInput.value = '';
         deadlineInput.value = '';
-        save(); render();
+        save();
+        render();
         taskInput.focus();
     }
 

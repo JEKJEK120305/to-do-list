@@ -20,6 +20,7 @@
     --red: #e85547;
     --edit: #d3ccb3;
     --clear-border: #3a7c77;
+    --icon-bg: #1a232c;
 }
 
 body {
@@ -173,7 +174,7 @@ input[type="text"]:focus, input[type="date"]:focus {
 }
 
 .icon-btn:hover {
-    background: lime;
+    background: var(--icon-bg);
 }
 
 .icon-btn.delete:hover {
@@ -242,4 +243,18 @@ ul {
 .clear-btn:hover {
     color: var(--red);
     border-color: var(--clear-border);
+}
+
+.check-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 13px;
+}
+
+.task-actions {
+    margin-left: auto;
 }
